@@ -2,7 +2,9 @@
 
 Simple python script that simulates gravity through direct sum.
 
-This version uses natural units where the gravitational constante is $4 \pi^2$
+This version uses natural units where the gravitational constant is
+
+$4 \pi^2$
 
 # Usage
 
