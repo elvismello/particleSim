@@ -3,21 +3,21 @@ import numpy as np
 constG = 4 * np.pi**2
 
 
-class particle ():
+class particle():
     mass = 0.0
     pos = np.array([0.0, 0.0, 0.0])
     vel = np.array([0.0, 0.0, 0.0])
     acel = np.array([0.0, 0.0, 0.0])
 
 
-    def setInitialConditions (self, m, r, v):
+    def setInitialConditions(self, m, r, v):
         self.mass = m
         self.pos = np.array(r)
         self.vel = np.array(v)
         self.acel = np.array([0.0, 0.0, 0.0])
 
     
-    def getAcel (self, position, particles):
+    def getAcel(self, position, particles):
         acel = np.array([0.0,0.0,0.0])
         for i in particles:
             if self != i:
@@ -27,10 +27,10 @@ class particle ():
             else:
                 pass
 
-        return (acel)
+        return(acel)
 
 
-    def integratePosVel (self, deltaT, particles):
+    def integratePosVel(self, deltaT, particles):
         # utilizing the leapfrog method
         velHalf = self.vel + self.acel * deltaT / 2
         self.pos = self.pos + velHalf * deltaT
