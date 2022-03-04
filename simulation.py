@@ -4,14 +4,14 @@ import numpy as np
 from particle import particle
 
 
-icFile = 'ICexamples/dataPlanets.txt' # initial conditions file
+icFile      = 'ICexamples/dataPlanets.txt' # initial conditions file
 
-constG = 4 * np.pi**2
-dt = 1e-2 # Integration time step
+constG      = 4 * np.pi**2
+dt          = 1e-2 # Integration time step
 
-bounds = 75 # Graph bounds (AU)
+bounds      = 75 # Graph bounds (AU)
 
-itvlPyplot = 50 # Interval of each step in the animation (miliseconds)
+itvlPyplot  = 50 # Interval of each step in the animation (miliseconds)
 
 
 m, px, py, pz, vx, vy, vz = np.loadtxt(icFile, unpack=True)
