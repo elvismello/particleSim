@@ -15,8 +15,8 @@ Currently, the code needs to have configured manually all plot parameters,
 which means that most customization is done in the code itself rather than
 using argparser or other tool.
 
-It should work out-of-the-box just by executing 'python3 simulation.py'.
+It should work out-of-the-box just by executing `python3 simulation.py`.
 
 This code also makes use of [Numpy](https://numpy.org/), which can be
-installed with 'python3 -m pip install numpy'.
+installed with `python3 -m pip install numpy`.
 
