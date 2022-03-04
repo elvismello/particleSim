@@ -59,7 +59,11 @@ def simulate(j):
     plt.ylim(-bounds, bounds)
     
 
-anim = animation.FuncAnimation(fig, simulate, interval=itvlPyplot, blit=False)
-#aparently, if the interval is too small for a certain amount of data, the graph is not plotted.
+anim = animation.FuncAnimation(fig,
+                                simulate,
+                                interval=itvlPyplot,
+                                blit=False)
+# aparently, if the interval is too small for a certain amount of data, the
+# graph is not plotted.
 
 plt.show()
