@@ -18,7 +18,6 @@ class particle ():
 
     
     def getAcel (self, position, particles):
-        #Returns the aceleration for an input position of the particle
         acel = np.array([0.0,0.0,0.0])
         for i in particles:
             if self != i:
@@ -32,7 +31,7 @@ class particle ():
 
 
     def integratePosVel (self, deltaT, particles):
-        #utilizing the leapfrog method
+        # utilizing the leapfrog method
         velHalf = self.vel + self.acel * deltaT / 2
         self.pos = self.pos + velHalf * deltaT
         self.acel = self.getAcel(self.pos, particles)
@@ -40,6 +39,14 @@ class particle ():
 
 
 def prepareData (particles, particleNumber):
+    """
+    This function takes a list of particle objects and prepares all relevant
+    data to be written in Gadget format.
+
+    Not used in this version.
+    """
+
+
     pos = []
     vel = []
     mass = []
