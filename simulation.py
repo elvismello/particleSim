@@ -9,7 +9,7 @@ icFile      = 'ICexamples/dataPlanets.txt' # initial conditions file
 constG      = 4 * np.pi**2
 dt          = 1e-2 # Integration time step
 
-bounds      = 75 # Graph bounds (AU)
+bounds      = 30 # Graph bounds (AU)
 
 itvlPyplot  = 50 # Interval of each step in the animation (miliseconds)
 
@@ -50,10 +50,11 @@ def simulate(j):
 
     ax1.clear()
 
-    ax1.scatter(xs, ys)
+    ax1.scatter(xs, ys, s=2)
 
-    ax1.set_xlabel('X Position (AU)')
-    ax1.set_ylabel('Y Position (AU)')
+    #ax1.set_xlabel('X Position (AU)')
+    #ax1.set_ylabel('Y Position (AU)')
+    ax1.set_axis_off()
 
     plt.xlim(-bounds, bounds)
     plt.ylim(-bounds, bounds)
