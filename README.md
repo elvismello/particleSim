@@ -1,2 +1,2 @@
 # particleSim
-Simple python script that simulates gravitaty through direct sum
+Simple python script that simulates gravity through direct sum
