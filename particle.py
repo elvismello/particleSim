@@ -3,21 +3,17 @@ import numpy as np
 constG = 4 * np.pi**2
 
 
-class particle():
-    mass = 0.0
-    pos = np.array([0.0, 0.0, 0.0])
-    vel = np.array([0.0, 0.0, 0.0])
-    acel = np.array([0.0, 0.0, 0.0])
+class Particle():
 
-
-    def setInitialConditions(self, m, r, v):
+    def __init__ (self, m, r, v, c='#1f77b4'):
         self.mass = m
         self.pos = np.array(r)
         self.vel = np.array(v)
         self.acel = np.array([0.0, 0.0, 0.0])
+        self.color = c
 
     
-    def getAcel(self, position, particles):
+    def _getAcel(self, position, particles):
         acel = np.array([0.0,0.0,0.0])
         for i in particles:
             if self != i:
@@ -27,14 +23,14 @@ class particle():
             else:
                 pass
 
-        return(acel)
+        return acel
 
 
     def integratePosVel(self, deltaT, particles):
         # utilizing the leapfrog method
         velHalf = self.vel + self.acel * deltaT / 2
         self.pos = self.pos + velHalf * deltaT
-        self.acel = self.getAcel(self.pos, particles)
+        self.acel = self._getAcel(self.pos, particles)
         self.vel = velHalf + self.acel * deltaT / 2
 
 
@@ -46,7 +42,6 @@ def prepareData (particles, particleNumber):
     Not used in this version.
     """
 
-
     pos = []
     vel = []
     mass = []
@@ -55,4 +50,4 @@ def prepareData (particles, particleNumber):
             pos.append(i.pos[j])
             vel.append(i.pos[j])
         mass.append(i.mass)
-        return([pos, vel, range(particleNumber), mass])
+        return [pos, vel, range(particleNumber), mass]

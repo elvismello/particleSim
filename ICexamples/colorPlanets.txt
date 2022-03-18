@@ -1,0 +1,9 @@
+gold
+grey
+orange
+blue
+red
+brown
+#78614f
+#bbe0f2
+#7ea9e6
